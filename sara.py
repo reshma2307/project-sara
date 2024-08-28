@@ -1,3 +1,4 @@
+'''
 import pygame
 import time
 import random
@@ -116,3 +117,12 @@ def gameLoop():
     quit()
 
 gameLoop()
+'''
+import re
+log_file_path = "C:/Users/moham/OneDrive/Documents/log_test.csv"
+latency_pattern = r'\b\d+\.\d+$'
+with open(log_file_path, 'r') as file:
+    for line in file:
+        match = re.search(latency_pattern, line)
+        if match:
+            print(match.group())
